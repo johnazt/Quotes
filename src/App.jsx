@@ -1,34 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import Data from "./quotes.json";
+import QuoteBox from "./components/QuoteBox";
+import Author from "./components/Author";
+import Button from "./components/Button";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+function App () {
+  
+  // SETTING RANDOM USER IN DATA
+	const randomIndex = Math.floor(Math.random() * Data.length);
+	const [index, setIndex] = useState(randomIndex);
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+  // SETTING COLORS 
+	const [color, setColor] = useState("red");
+	const [bg, setBg] = useState("red-bg");
+
+  // COLOR CLASSES ARRAY
+	const colorsArray = [
+		"red",
+		"green",
+		"blue",
+		"purple",
+		"pink",
+		"yellow",
+		"violet",
+	];
+	const bgArray = [
+		"red-bg",
+		"green-bg",
+		"blue-bg",
+		"purple-bg",
+		"pink-bg",
+		"yellow-bg",
+		"violet-bg",
+	];
+
+  // ONCLICK FUNCTION
+  function changeColors () {
+    
+    const randomNumber = Math.floor(Math.random() * colorsArray.length);
+    // STORE RANDOM COLORS
+		const colorValue = colorsArray[randomNumber];
+		const bgValue = bgArray[randomNumber];
+    // RENDER NEW VALUES OF COLORS
+		setColor(colorValue);
+		setBg(bgValue);
+		setIndex(randomIndex);
+	}
+
+	return (
+		<div className={`App ${bg}`}>
+			<div className="container-quote">
+        <QuoteBox
+          color={color}
+          quote={Data[index].quote} />
+        <Author
+          color={color}
+          author={Data[index].author} />
+        <Button
+          bg={bg}
+          changeColors={changeColors} />
+			</div>
+		</div>
+	);
 }
 
-export default App
+export default App;

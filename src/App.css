@@ -1,41 +1,89 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+/* ========== QUOTE APP ============= */
+
+.App {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+}
+.container-quote {
+	background-color: #ffffff;
+	width: 700px;
+	padding: 1.5em;
+	box-shadow: 5px 5px 10px rgb(82, 81, 81);
+}
+.quote {
+	display: flex;
+	align-items: center;
+	column-gap: 1em;
+}
+.quote__icon {
+	font-size: 5rem;
+}
+.quote__author {
+	text-align: right;
+	margin-right: 10px;
+}
+.container-btn {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 1em;
+	margin-right: 10px;
+}
+.quote__btn {
+	border: transparent;
+	border-radius: 50%;
+	font-size: 2rem;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: 3px 3px 5px rgb(82, 81, 81);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+/* ============ COLORS CLASSES =========== */
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.red {
+	color: #cf596e;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.green {
+	color: #28a27e;
 }
-
-.card {
-  padding: 2em;
+.blue {
+	color: #2e4fe2;
 }
-
-.read-the-docs {
-  color: #888;
+.purple {
+	color: #9a68d7;
+}
+.pink {
+	color: #ff80c0;
+}
+.yellow {
+	color: #fbb93f;
+}
+.violet {
+	color: #6c2050;
+}
+.red-bg {
+	background-color: #cf596e;
+}
+.green-bg {
+	background-color: #28a27e;
+}
+.blue-bg {
+	background-color: #2e4fe2;
+}
+.purple-bg {
+	background-color: #9a68d7;
+}
+.pink-bg {
+	background-color: #ff80c0;
+}
+.yellow-bg {
+	background-color: #fbb93f;
+}
+.violet-bg {
+	background-color: #6c2050;
 }
